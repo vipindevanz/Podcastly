@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_google.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_google_auth.xml" value="0.24739583333333334" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>

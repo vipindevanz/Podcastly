@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Podcastly">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
