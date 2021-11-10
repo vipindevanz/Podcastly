@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Podcastly</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_screen_desc">Create podcasts and go live. All-in-one audio recorder and podcast creator to make a podcast</string>
 </resources>
