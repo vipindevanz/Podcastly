@@ -6,21 +6,29 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
 import android.os.*
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
+import androidx.room.Room
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.transformation.FabTransformationSheetBehavior
 import com.pns.podcastly.R
+import com.pns.podcastly.database.db.AppDatabase
+import com.pns.podcastly.database.model.AudioRecord
 import com.pns.podcastly.utils.Constants
 import com.pns.podcastly.utils.Timer
 import kotlinx.android.synthetic.main.activity_record_audio.*
 import kotlinx.android.synthetic.main.bottom_sheet.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.io.File
+import java.io.FileOutputStream
 import java.io.IOException
+import java.io.ObjectOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -31,11 +39,13 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
     private var permissionGranted = false
     private lateinit var recorder: MediaRecorder
     private lateinit var timer: Timer
+    private lateinit var db: AppDatabase
     private lateinit var vibrator: Vibrator
     private lateinit var amplitudes: ArrayList<Float>
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
     private var dirPath = ""
     private var fileName = ""
+    private var duration = ""
     private var isRecording = false
     private var isPaused = false
 
@@ -50,6 +60,8 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavior.peekHeight = 0
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+
+        db = Room.databaseBuilder(this, AppDatabase::class.java, "audioRecords").build()
 
         permissionGranted = ActivityCompat.checkSelfPermission(
             this,
@@ -103,6 +115,26 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
         if (fileName != newFileName){
             var newFile = File("$dirPath$newFileName.mp3")
             File("$dirPath$fileName.mp3").renameTo(newFile)
+        }
+
+        var filePath = "$dirPath$newFileName.mp3"
+        var timeStamp = Date().time
+        var ampsPath = "$dirPath$newFileName"
+
+        try {
+            var fos = FileOutputStream(ampsPath)
+            var out = ObjectOutputStream(fos)
+            out.writeObject(amplitudes)
+            fos.close()
+            out.close()
+        } catch (e : IOException){
+            Log.d(Constants.DEBUG_TAG, "error ${e.message}")
+        }
+
+        val record = AudioRecord(newFileName, filePath, timeStamp.toString(), duration, ampsPath)
+
+        GlobalScope.launch {
+            db.audioRecordDao().insert(record)
         }
     }
 
@@ -214,6 +246,7 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
 
     override fun onTimerTick(duration: String) {
         tvTimer.text = duration
+        this.duration = duration.dropLast(3)
         waveFormView.addAmplitudes(recorder.maxAmplitude.toFloat())
     }
 }

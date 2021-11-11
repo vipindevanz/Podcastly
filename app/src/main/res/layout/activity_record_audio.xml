@@ -19,7 +19,7 @@
             android:text="00:00:00"
             android:textSize="56sp" />
 
-        <com.pns.podcastly.utils.WaveFormView
+        <com.pns.podcastly.customview.WaveFormView
             android:id="@+id/waveFormView"
             android:layout_width="match_parent"
             android:layout_height="400px"
@@ -69,6 +69,7 @@
     <View
         android:id="@+id/bottomSheetBG"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent"
         android:background="@color/opaqueBG" />
 

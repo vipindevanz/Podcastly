@@ -1,4 +1,4 @@
-package com.pns.podcastly.utils
+package com.pns.podcastly.customview
 
 import android.content.Context
 import android.graphics.Canvas
