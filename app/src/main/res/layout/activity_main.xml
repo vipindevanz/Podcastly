@@ -5,30 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:theme="@style/Theme.MaterialComponents.Light"
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottom_appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_margin="0dp"
-            android:backgroundTint="#FFFFFF"
-            android:padding="0dp"
+            android:background="#FFFFFF"
+            app:fabCradleMargin="20dp"
             app:fabCradleRoundedCornerRadius="20dp"
-            app:fabCradleVerticalOffset="20dp">
+            app:fabCradleVerticalOffset="5dp">
 
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#FFFFFF"
                 app:menu="@menu/bottom_nav_menu" />
         </com.google.android.material.bottomappbar.BottomAppBar>
 
@@ -36,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:backgroundTint="#8B6EAF"
+            android:backgroundTint="#533A71"
             android:src="@drawable/mic_icon"
             app:layout_anchor="@id/bottom_appbar" />
 
