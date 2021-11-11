@@ -3,9 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/background_round.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_delete.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_delete_disabled.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_done.xml" value="0.2635416666666667" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_google.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_list.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_pause.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_record.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_ripple.xml" value="0.2635416666666667" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_google_auth.xml" value="0.24739583333333334" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_record_audio.xml" value="0.24739583333333334" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/bottom_sheet.xml" value="0.24739583333333334" />
       </map>
     </option>
   </component>
