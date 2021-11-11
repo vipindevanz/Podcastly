@@ -7,7 +7,7 @@ import android.os.Handler
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.pns.podcastly.onboarding.Welcome_tutorial
+import com.pns.podcastly.onboarding.WelcomeTutorial
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
@@ -19,7 +19,7 @@ class SplashScreen : AppCompatActivity() {
         Glide.with(applicationContext).load(R.drawable.splash_gif).into(iv_splash_image)
 
         Handler().postDelayed({
-            startActivity(Intent(this, Welcome_tutorial::class.java))
+            startActivity(Intent(this, WelcomeTutorial::class.java))
             finish()
         }, 2000)
     }

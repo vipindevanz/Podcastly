@@ -10,11 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Podcastly">
         <activity
-            android:name=".MainActivity2"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:name=".onboarding.Welcome_tutorial"
+            android:name=".onboarding.WelcomeTutorial"
             android:exported="true" />
         <activity
             android:name=".SplashScreen"

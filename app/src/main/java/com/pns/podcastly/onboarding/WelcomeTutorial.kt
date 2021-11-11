@@ -9,7 +9,7 @@ import com.pns.podcastly.R
 import kotlinx.android.synthetic.main.activity_welcome_tutorial.*
 import me.relex.circleindicator.CircleIndicator3
 
-class Welcome_tutorial : AppCompatActivity() {
+class WelcomeTutorial : AppCompatActivity() {
     private var titleList = mutableListOf<String>()
     private var descList = mutableListOf<String>()
     private var imagesList = mutableListOf<Int>()
@@ -34,7 +34,6 @@ class Welcome_tutorial : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
-
 
     }
 
