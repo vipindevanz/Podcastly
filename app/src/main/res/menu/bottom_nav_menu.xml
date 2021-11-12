@@ -9,6 +9,9 @@
         android:icon="@drawable/search_icon"
         android:title="Search" />
     <item
+        android:id="@+id/anchor"
+        android:title="" />
+    <item
         android:id="@+id/subscribe"
         android:icon="@drawable/subscriptions_icon"
         android:title="Subscribed" />

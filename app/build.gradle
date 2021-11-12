@@ -109,4 +109,6 @@ dependencies {
     //circularDots
     implementation 'me.relex:circleindicator:2.1.6'
 
+    //Image Slider
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
 }
