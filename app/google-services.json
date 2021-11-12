@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "996792636731",
+    "firebase_url": "https://podcastly-aab09-default-rtdb.firebaseio.com",
+    "project_id": "podcastly-aab09",
+    "storage_bucket": "podcastly-aab09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996792636731:android:aa64024871c55543e8931e",
+        "android_client_info": {
+          "package_name": "com.pns.podcastly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996792636731-leacgdoo9kk12givl4mlkjot1obbc3co.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pns.podcastly",
+            "certificate_hash": "7c7ac8f65d3945a8f8db456335f8ff7a30d72086"
+          }
+        },
+        {
+          "client_id": "996792636731-t6ga0u7jj2rv2b0lmfqt33k86k4nmc9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaDys8WzEN04yiZJ5kIw4O4Cw8l1_j82I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996792636731-t6ga0u7jj2rv2b0lmfqt33k86k4nmc9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
