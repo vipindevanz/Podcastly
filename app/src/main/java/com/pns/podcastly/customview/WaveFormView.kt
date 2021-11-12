@@ -31,19 +31,19 @@ class WaveFormView(context: Context?, attrs: AttributeSet?) : View(context, attr
     }
 
     fun addAmplitudes(amp: Float) {
-        var norm = Math.min(amp.toInt()/7, 400).toFloat()
+        val norm = Math.min(amp.toInt()/7, 400).toFloat()
         amplitudes.add(norm)
 
         spikes.clear()
 
-        var amps = amplitudes.takeLast(maxSpikes)
+        val amps = amplitudes.takeLast(maxSpikes)
 
         for(i in amps.indices) {
 
-            var left = sw - i*(w+d)
-            var top = sh/2 - amps[i]/2
-            var right = left + w
-            var bottom = top + amps[i]
+            val left = sw - i*(w+d)
+            val top = sh/2 - amps[i]/2
+            val right = left + w
+            val bottom = top + amps[i]
             spikes.add(RectF(left, top, right, bottom))
         }
         invalidate()
@@ -51,7 +51,7 @@ class WaveFormView(context: Context?, attrs: AttributeSet?) : View(context, attr
 
     fun clear() : ArrayList<Float> {
 
-        var amps = amplitudes.clone() as ArrayList<Float>
+        val amps = amplitudes.clone() as ArrayList<Float>
         amplitudes.clear()
         spikes.clear()
         invalidate()

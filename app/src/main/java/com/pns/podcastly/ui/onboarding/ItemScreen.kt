@@ -1,4 +1,4 @@
-package com.pns.podcastly.onboarding
+package com.pns.podcastly.ui.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater

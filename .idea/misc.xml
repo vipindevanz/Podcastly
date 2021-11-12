@@ -19,11 +19,15 @@
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/drawable/ic_ripple.xml" value="0.2635416666666667" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout-v28/activity_gallery.xml" value="0.24739583333333334" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_audio_player.xml" value="0.24739583333333334" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_auth.xml" value="0.24358974358974358" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_gallery.xml" value="0.24739583333333334" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_google_auth.xml" value="0.24739583333333334" />
-        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_main.xml" value="0.24358974358974358" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_record_audio.xml" value="0.2101851851851852" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_splash_screen.xml" value="0.24358974358974358" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/activity_welcome_tutorial.xml" value="0.24739583333333334" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/bottom_sheet.xml" value="0.24739583333333334" />
+        <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/fragment_item_screen.xml" value="0.24358974358974358" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/layout/item_layout.xml" value="0.24739583333333334" />
         <entry key="..\:/AndroidProjects/Podcastly/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24358974358974358" />
       </map>

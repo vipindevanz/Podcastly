@@ -1,11 +1,11 @@
-package com.pns.podcastly.onboarding
+package com.pns.podcastly.ui.onboarding
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.pns.podcastly.MainActivity
 import com.pns.podcastly.R
+import com.pns.podcastly.ui.activity.MainActivity
 import kotlinx.android.synthetic.main.activity_welcome_tutorial.*
 import me.relex.circleindicator.CircleIndicator3
 
