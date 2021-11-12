@@ -16,4 +16,6 @@
     <color name="colorText">#FF282828</color>
     <color name="stroke_color">#FF1E88E5</color>
     <color name="opaqueBG">#61000000</color>
+
+    <color name="playerColor">#FF4349</color>
 </resources>

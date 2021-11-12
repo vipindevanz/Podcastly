@@ -3,6 +3,7 @@ package com.pns.podcastly.ui.activity
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
 import android.os.*
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.room.Room
@@ -19,6 +21,7 @@ import com.google.android.material.transformation.FabTransformationSheetBehavior
 import com.pns.podcastly.R
 import com.pns.podcastly.database.db.AppDatabase
 import com.pns.podcastly.database.model.AudioRecord
+import com.pns.podcastly.interfaces.OnItemClickListener
 import com.pns.podcastly.utils.Constants
 import com.pns.podcastly.utils.Timer
 import kotlinx.android.synthetic.main.activity_record_audio.*
@@ -78,7 +81,7 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
             vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
         }
 
-        btnList.setOnClickListener { }
+        btnList.setOnClickListener { startActivity(Intent(this, GalleryActivity::class.java)) }
 
         btnDone.setOnClickListener {
             stopRecorder()
@@ -110,9 +113,9 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
         btnDelete.isClickable = false
     }
 
-    private fun save(){
+    private fun save() {
         val newFileName = fileNameInput.text.toString()
-        if (fileName != newFileName){
+        if (fileName != newFileName) {
             var newFile = File("$dirPath$newFileName.mp3")
             File("$dirPath$fileName.mp3").renameTo(newFile)
         }
@@ -127,7 +130,7 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
             out.writeObject(amplitudes)
             fos.close()
             out.close()
-        } catch (e : IOException){
+        } catch (e: IOException) {
             Log.d(Constants.DEBUG_TAG, "error ${e.message}")
         }
 
@@ -135,6 +138,7 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
 
         GlobalScope.launch {
             db.audioRecordDao().insert(record)
+//            Toast.makeText(this@RecordAudioActivity, "Saved recording", Toast.LENGTH_LONG).show()
         }
     }
 
