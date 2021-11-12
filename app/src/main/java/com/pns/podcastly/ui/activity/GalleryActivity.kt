@@ -49,7 +49,6 @@ class GalleryActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun onItemClickListener(position: Int) {
-        Toast.makeText(this, "ok", Toast.LENGTH_LONG).show()
         val audioRecord = records[position]
         val intent = Intent(this, AudioPlayerActivity::class.java)
         intent.putExtra("filePath", audioRecord.filePath)
@@ -58,6 +57,5 @@ class GalleryActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun onItemLongClickListener(position: Int) {
-        Toast.makeText(this, "ok", Toast.LENGTH_LONG).show()
     }
 }
