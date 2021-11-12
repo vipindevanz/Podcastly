@@ -1,6 +1,7 @@
-package com.pns.podcastly
+package com.pns.podcastly.ui.viewholder
 
 import android.view.View
+import com.pns.podcastly.database.model.BannerModel
 import com.smarteist.autoimageslider.SliderViewAdapter
 import kotlinx.android.synthetic.main.banner_layout.view.*
 

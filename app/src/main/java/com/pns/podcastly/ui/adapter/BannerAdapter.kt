@@ -1,7 +1,10 @@
-package com.pns.podcastly
+package com.pns.podcastly.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.pns.podcastly.database.model.BannerModel
+import com.pns.podcastly.ui.viewholder.BannerViewHolder
+import com.pns.podcastly.R
 import com.smarteist.autoimageslider.SliderViewAdapter
 
 class BannerAdapter(private val bannerList: MutableList<BannerModel>) :

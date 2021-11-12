@@ -1,10 +1,10 @@
-package com.pns.podcastly.fragment
+package com.pns.podcastly.ui.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.pns.podcastly.BannerAdapter
-import com.pns.podcastly.BannerModel
+import com.pns.podcastly.ui.adapter.BannerAdapter
+import com.pns.podcastly.database.model.BannerModel
 import com.pns.podcastly.R
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
