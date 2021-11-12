@@ -15,7 +15,7 @@ class WaveFormView(context: Context?, attrs: AttributeSet?) : View(context, attr
     private var spikes = ArrayList<RectF>()
 
     private var radius = 6f
-    private var w = 9f
+    private var w = 6f
     private var d = 6f
 
     private var sw = 0f
@@ -24,14 +24,14 @@ class WaveFormView(context: Context?, attrs: AttributeSet?) : View(context, attr
     private var maxSpikes = 0
 
     init {
-        paint.color = Color.rgb(244, 81, 30)
+        paint.color = Color.rgb(143, 18, 252)
         sw = resources.displayMetrics.widthPixels.toFloat()
 
         maxSpikes = (sw/(w+d)).toInt()
     }
 
     fun addAmplitudes(amp: Float) {
-        val norm = Math.min(amp.toInt()/7, 400).toFloat()
+        val norm = (amp.toInt() / 7).coerceAtMost(400).toFloat()
         amplitudes.add(norm)
 
         spikes.clear()
@@ -45,6 +45,11 @@ class WaveFormView(context: Context?, attrs: AttributeSet?) : View(context, attr
             val right = left + w
             val bottom = top + amps[i]
             spikes.add(RectF(left, top, right, bottom))
+
+            val r = (0..256).random()
+            val g = (0..256).random()
+            val b = (0..256).random()
+            paint.color = Color.rgb(r, g, b)
         }
         invalidate()
     }

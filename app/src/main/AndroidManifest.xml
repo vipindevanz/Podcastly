@@ -30,10 +30,10 @@
             android:name="com.pns.podcastly.ui.onboarding.WelcomeTutorial"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.RecordAudioActivity"
+            android:name=".ui.activity.SplashScreenActivity"
             android:exported="true"/>
         <activity
-            android:name=".ui.activity.SplashScreenActivity"
+            android:name=".ui.activity.RecordAudioActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

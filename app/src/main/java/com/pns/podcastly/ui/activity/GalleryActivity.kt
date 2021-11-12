@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.pns.podcastly.R
@@ -38,14 +37,14 @@ class GalleryActivity : AppCompatActivity(), OnItemClickListener {
 
         fetchAll()
 
-        searchInput.addTextChangedListener(object : TextWatcher{
+        searchInput.addTextChangedListener(object : TextWatcher {
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 TODO("Not yet implemented")
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                var query = s.toString()
+                val query = s.toString()
                 searchDatabase(query)
             }
 

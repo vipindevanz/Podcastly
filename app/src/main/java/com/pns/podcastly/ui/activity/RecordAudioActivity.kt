@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
+import android.net.Uri
 import android.os.*
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -17,17 +18,14 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.room.Room
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.transformation.FabTransformationSheetBehavior
 import com.pns.podcastly.R
 import com.pns.podcastly.database.db.AppDatabase
 import com.pns.podcastly.database.model.AudioRecord
-import com.pns.podcastly.interfaces.OnItemClickListener
 import com.pns.podcastly.utils.Constants
 import com.pns.podcastly.utils.Timer
 import kotlinx.android.synthetic.main.activity_record_audio.*
 import kotlinx.android.synthetic.main.bottom_sheet.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -35,7 +33,11 @@ import java.io.ObjectOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import android.provider.MediaStore
+import android.provider.OpenableColumns
+import androidx.loader.content.CursorLoader
 
+@DelicateCoroutinesApi
 class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
 
     private var permissions = arrayOf(Manifest.permission.RECORD_AUDIO)
@@ -73,7 +75,6 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
 
         btnRecord.setOnClickListener {
             when {
-
                 isPaused -> resumeRecorder()
                 isRecording -> pauseRecorder()
                 else -> startRecording()
@@ -81,7 +82,9 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
             vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
         }
 
-        btnList.setOnClickListener { startActivity(Intent(this, GalleryActivity::class.java)) }
+        btnList.setOnClickListener {
+            startActivity(Intent(this, GalleryActivity::class.java))
+        }
 
         btnDone.setOnClickListener {
             stopRecorder()
@@ -110,23 +113,74 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
             File("$dirPath$fileName.mp3").delete()
         }
 
+        back.setOnClickListener { onBackPressed() }
+        openGallery.setOnClickListener { openGallery() }
+
         btnDelete.isClickable = false
+    }
+
+    private fun openGallery() {
+        val intent = Intent()
+        intent.type = "audio/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent, Constants.MUSIC_REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == Constants.MUSIC_REQUEST_CODE && data?.data != null) {
+            val filePath = getRealPathFromURI(data.data!!)
+            val fileName = getFileName(data.data!!)
+
+            val intent = Intent(this@RecordAudioActivity, AudioPlayerActivity::class.java)
+            intent.putExtra("filePath", filePath)
+            intent.putExtra("fileName", fileName)
+            startActivity(intent)
+        }
+    }
+
+    private fun getRealPathFromURI(contentUri: Uri): String? {
+        val proj = arrayOf(MediaStore.Images.Media.DATA)
+        val loader = CursorLoader(this, contentUri, proj, null, null, null)
+        val cursor = loader.loadInBackground()
+        val columnIndex = cursor!!.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+        cursor.moveToFirst()
+        val result = cursor.getString(columnIndex)
+        cursor.close()
+        return result
+    }
+
+    @SuppressLint("Range")
+    private fun getFileName(uri: Uri): String? {
+
+        if (uri.scheme == "content") {
+            val cursor = this.contentResolver.query(uri, null, null, null, null)
+            cursor.use {
+                if (cursor != null) {
+                    if (cursor.moveToFirst()) {
+                        return cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                    }
+                }
+            }
+        }
+
+        return uri.path?.substring(uri.path!!.lastIndexOf('/') + 1)
     }
 
     private fun save() {
         val newFileName = fileNameInput.text.toString()
         if (fileName != newFileName) {
-            var newFile = File("$dirPath$newFileName.mp3")
+            val newFile = File("$dirPath$newFileName.mp3")
             File("$dirPath$fileName.mp3").renameTo(newFile)
         }
 
-        var filePath = "$dirPath$newFileName.mp3"
-        var timeStamp = Date().time
-        var ampsPath = "$dirPath$newFileName"
+        val filePath = "$dirPath$newFileName.mp3"
+        val timeStamp = Date().time
+        val ampsPath = "$dirPath$newFileName"
 
         try {
-            var fos = FileOutputStream(ampsPath)
-            var out = ObjectOutputStream(fos)
+            val fos = FileOutputStream(ampsPath)
+            val out = ObjectOutputStream(fos)
             out.writeObject(amplitudes)
             fos.close()
             out.close()
@@ -136,9 +190,15 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
 
         val record = AudioRecord(newFileName, filePath, timeStamp.toString(), duration, ampsPath)
 
-        GlobalScope.launch {
+        CoroutineScope(Dispatchers.IO).launch {
             db.audioRecordDao().insert(record)
-//            Toast.makeText(this@RecordAudioActivity, "Saved recording", Toast.LENGTH_LONG).show()
+            runOnUiThread {
+                Toast.makeText(
+                    this@RecordAudioActivity,
+                    "Saved recording",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
 
@@ -148,7 +208,7 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
 
         Handler(Looper.getMainLooper()).postDelayed({
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        }, 100)
+        }, 500)
     }
 
     private fun hideKeyboard(view: View) {
@@ -208,7 +268,6 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
                 prepare()
                 start()
             } catch (e: IOException) {
-
             }
 
             btnRecord.setImageResource(R.drawable.ic_pause)

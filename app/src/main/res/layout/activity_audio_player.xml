@@ -23,6 +23,12 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/toolBar"
+        android:background="@color/gray" />
+
     <com.google.android.material.chip.Chip
         android:id="@+id/chip"
         android:layout_width="60dp"

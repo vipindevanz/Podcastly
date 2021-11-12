@@ -9,7 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="orange">#F4211E</color>
+    <color name="orange">#8f12fc</color>
     <color name="gray">#FFECECEC</color>
     <color name="grayDark">#FF656565</color>
     <color name="grayDarkDisabled">#FF8f8f8f</color>
@@ -18,5 +18,5 @@
     <color name="stroke_color">#FF1E88E5</color>
     <color name="opaqueBG">#61000000</color>
 
-    <color name="playerColor">#FF4349</color>
+    <color name="playerColor">#8f12fc</color>
 </resources>

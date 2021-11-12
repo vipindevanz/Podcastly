@@ -9,6 +9,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolBar"
+            android:layout_height="?attr/actionBarSize">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_back"
+                    android:id="@+id/back"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Record"
+                    android:textSize="20sp"
+                    android:layout_centerInParent="true"/>
+
+                <ImageButton
+                    android:id="@+id/more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/ic_more"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/toolBar"
+            android:background="@color/gray" />
+
         <TextView
             android:id="@+id/tvTimer"
             android:layout_width="wrap_content"
@@ -29,7 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="120dp"
+            android:id="@+id/ll"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -64,6 +107,17 @@
                 android:visibility="gone" />
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:id="@+id/openGallery"
+            android:textColor="@color/grayDarkDisabled"
+            android:text="+ Add it from Gallery"/>
+
     </RelativeLayout>
 
     <View
@@ -73,6 +127,6 @@
         android:layout_height="match_parent"
         android:background="@color/opaqueBG" />
 
-    <include layout="@layout/bottom_sheet" />
+    <include layout="@layout/bottom_sheet"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

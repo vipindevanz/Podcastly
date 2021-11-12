@@ -90,6 +90,7 @@ class AudioPlayerActivity : AppCompatActivity() {
         }
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) player.seekTo(progress)
             }
@@ -103,6 +104,7 @@ class AudioPlayerActivity : AppCompatActivity() {
     }
 
     private fun playPausePlayer() {
+
         if (!player.isPlaying) {
             player.start()
             btnPlay.background =
@@ -117,12 +119,12 @@ class AudioPlayerActivity : AppCompatActivity() {
     }
 
     private fun dateFormat(duration : Int) : String{
-        var d = duration/1000
-        var s = d%60
-        var m = (d/60 %60)
-        var h = ((d-m*60)/360)
+        val d = duration/1000
+        val s = d%60
+        val m = (d/60 %60)
+        val h = ((d-m*60)/360)
 
-        var f : NumberFormat = DecimalFormat("00")
+        val f : NumberFormat = DecimalFormat("00")
         var str = "$m:${f.format(s)}"
 
         if (h>0) str = "$h:$str"
