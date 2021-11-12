@@ -9,6 +9,9 @@ interface AudioRecordDao {
     @Query("select * from audioRecords")
     fun getAll(): List<AudioRecord>
 
+    @Query("select * from audioRecords where fileName like :query")
+    fun searchDatabase(query: String): List<AudioRecord>
+
     @Insert
     fun insert(vararg audioRecord: AudioRecord)
 
