@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheet"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/bottomSheet"
     android:background="@drawable/background_round"
     android:orientation="vertical"
     app:layout_behavior="@string/bottom_sheet_behavior">
@@ -11,8 +11,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Record?"
         android:layout_marginTop="20dp"
+        android:text="Save Record?"
         android:textAlignment="center"
         android:textSize="26sp" />
 
@@ -24,9 +24,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fileNameInput"
             android:layout_width="match_parent"
-            android:inputType="text"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:inputType="text"
             android:padding="16dp" />
 
     </com.google.android.material.textfield.TextInputLayout>

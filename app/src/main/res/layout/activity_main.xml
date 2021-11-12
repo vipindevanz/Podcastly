@@ -8,10 +8,49 @@
     android:theme="@style/Theme.MaterialComponents.Light"
     tools:context=".ui.activity.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <RelativeLayout
+            android:id="@+id/options"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#E6636262"
+                android:forceDarkAllowed="true" />
+
+
+        <ImageView
+            android:id="@+id/recordAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="200dp"
+            android:background="@drawable/ic_circle"
+            android:padding="20dp"
+            android:src="@drawable/mic_icon2" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="200dp"
+            android:background="@drawable/ic_circle"
+            android:padding="20dp"
+            android:src="@drawable/podcast_icon" />
+
+
+    </RelativeLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -41,10 +80,12 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/micOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:backgroundTint="#533A71"
+            app:borderWidth="0dp"
             android:src="@drawable/mic_icon"
             app:fabCustomSize="80dp"
             app:layout_anchor="@id/bottom_appbar"
@@ -52,4 +93,5 @@
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </RelativeLayout>

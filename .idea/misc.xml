@@ -9,11 +9,16 @@
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/audiobook_icon.xml" value="0.225" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/btn_skip_back.xml" value="0.22962962962962963" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/categories_icon.xml" value="0.225" />
+        <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/close_icon.xml" value="0.2222222222222222" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/home.xml" value="0.22962962962962963" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/home_icon.xml" value="0.22962962962962963" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/ic_btn_next_svg.xml" value="0.22777777777777777" />
+        <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/ic_circle.xml" value="0.225" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/live_icon.xml" value="0.225" />
+        <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/mic.xml" value="0.225" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/mic_icon.xml" value="0.22962962962962963" />
+        <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/mic_icon2.xml" value="0.2222222222222222" />
+        <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/podcast_icon.xml" value="0.225" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/search_icon.xml" value="0.22962962962962963" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/subscriptions_icon.xml" value="0.22962962962962963" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/drawable/trending_icon.xml" value="0.225" />
@@ -23,6 +28,7 @@
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/layout/activity_splash_screen.xml" value="0.2586050724637681" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/layout/activity_welcome_tutorial.xml" value="0.2586050724637681" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/layout/banner_layout.xml" value="0.2586050724637681" />
+        <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/layout/bottom_sheet.xml" value="0.12613981762917933" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/layout/fragment_item_screen.xml" value="0.2586050724637681" />
         <entry key="..\:/Prabhakar/Full Stack Android Development/Assignments/Week 28/Day-01/Podcastly/app/src/main/res/menu/bottom_nav_menu.xml" value="0.259375" />

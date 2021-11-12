@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:scrollbars="none"
     tools:context=".ui.fragment.HomeFragment">
 
@@ -38,12 +37,10 @@
             android:orientation="horizontal"
             android:weightSum="4">
 
-
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-
                 android:src="@drawable/categories_icon"
                 app:civ_border_color="#EEEBF2"
                 app:civ_border_width="1dp"
