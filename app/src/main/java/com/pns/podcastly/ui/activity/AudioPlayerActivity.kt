@@ -79,17 +79,17 @@ class AudioPlayerActivity : AppCompatActivity() {
             seekBar.progress -= jumpValue
         }
 
-        chip.setOnClickListener{
-            if (playBackSpeed!=2.0f){
-                playBackSpeed+=0.5f
-            } else{
+        chip.setOnClickListener {
+            if (playBackSpeed != 2.0f) {
+                playBackSpeed += 0.5f
+            } else {
                 playBackSpeed = 0.5f
             }
             player.playbackParams = PlaybackParams().setSpeed(playBackSpeed)
             chip.text = "x $playBackSpeed"
         }
 
-        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) player.seekTo(progress)
@@ -118,16 +118,16 @@ class AudioPlayerActivity : AppCompatActivity() {
         }
     }
 
-    private fun dateFormat(duration : Int) : String{
-        val d = duration/1000
-        val s = d%60
-        val m = (d/60 %60)
-        val h = ((d-m*60)/360)
+    private fun dateFormat(duration: Int): String {
+        val d = duration / 1000
+        val s = d % 60
+        val m = (d / 60 % 60)
+        val h = ((d - m * 60) / 360)
 
-        val f : NumberFormat = DecimalFormat("00")
+        val f: NumberFormat = DecimalFormat("00")
         var str = "$m:${f.format(s)}"
 
-        if (h>0) str = "$h:$str"
+        if (h > 0) str = "$h:$str"
         return str
     }
 
