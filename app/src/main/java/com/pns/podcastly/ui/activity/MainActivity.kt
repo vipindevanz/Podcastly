@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.fragment_account)
 
         val lst = ListenNotesApiRepo()
 
@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             podcastList.addAll(podcasts)
             Log.i("rkpsx7", "onCreate: ${podcastList.size}")
         }
+
 
 
     }
