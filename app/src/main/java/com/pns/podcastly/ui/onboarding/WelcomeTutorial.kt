@@ -4,8 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 import com.pns.podcastly.R
+import com.pns.podcastly.ui.activity.AuthActivity
 import com.pns.podcastly.ui.activity.MainActivity
+import com.pns.podcastly.ui.activity.RecordAudioActivity
 import kotlinx.android.synthetic.main.activity_welcome_tutorial.*
 import me.relex.circleindicator.CircleIndicator3
 
@@ -24,14 +28,14 @@ class WelcomeTutorial : AppCompatActivity() {
                 0 -> slide_view_pager.currentItem = 1
                 1 -> slide_view_pager.currentItem = 2
                 2 -> {
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, AuthActivity::class.java))
                     finish()
                 }
 
             }
         }
         btn_skip.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, AuthActivity::class.java))
             finish()
         }
 
@@ -71,5 +75,13 @@ class WelcomeTutorial : AppCompatActivity() {
                     "Engage with the host and other listeners with messages",
             R.drawable.third_sc_image
         )
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (FirebaseAuth.getInstance().currentUser != null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
     }
 }
