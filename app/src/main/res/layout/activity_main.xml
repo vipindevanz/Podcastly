@@ -9,22 +9,22 @@
     tools:context=".ui.activity.MainActivity">
 
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <RelativeLayout
-            android:id="@+id/options"
+    <RelativeLayout
+        android:id="@+id/options"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#E6636262"
-                android:forceDarkAllowed="true" />
+            android:background="#D2020000"
+            android:forceDarkAllowed="true" />
 
 
         <ImageView
@@ -85,13 +85,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:backgroundTint="#533A71"
-            app:borderWidth="0dp"
             android:src="@drawable/mic_icon"
+            app:borderWidth="0dp"
             app:fabCustomSize="80dp"
             app:layout_anchor="@id/bottom_appbar"
+            app:rippleColor="#1F84DD"
             app:tint="#FFFFFF" />
 
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </RelativeLayout>
