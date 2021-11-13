@@ -20,6 +20,6 @@ class TopShowsAdapter(private val showsList: MutableList<Podcast>) :
     }
 
     override fun getItemCount(): Int {
-        return 9
+        return showsList.size
     }
 }
