@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/bannerSlider"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:sliderAnimationDuration="500"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="500"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="10dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="2dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#2E1E4C"
+            app:sliderIndicatorUnselectedColor="#FFFFFF"
+            app:sliderScrollTimeInSec="2"
+            app:sliderStartAutoCycle="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+
+                android:src="@drawable/categories_icon"
+                app:civ_border_color="#EEEBF2"
+                app:civ_border_width="1dp"
+                app:civ_circle_background_color="#EEEBF2" />
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+
+                android:src="@drawable/trending_icon"
+                app:civ_border_color="#EEEBF2"
+                app:civ_border_width="1dp"
+                app:civ_circle_background_color="#EEEBF2" />
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/live_icon"
+                app:civ_border_color="#EEEBF2"
+                app:civ_border_width="1dp"
+                app:civ_circle_background_color="#EEEBF2" />
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/audiobook_icon"
+                app:civ_border_color="#EEEBF2"
+                app:civ_border_width="1dp"
+                app:civ_circle_background_color="#EEEBF2" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
