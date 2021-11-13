@@ -31,7 +31,6 @@ class WelcomeTutorial : AppCompatActivity() {
                     startActivity(Intent(this, AuthActivity::class.java))
                     finish()
                 }
-
             }
         }
         btn_skip.setOnClickListener {
