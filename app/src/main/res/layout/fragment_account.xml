@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.AccountFragment">
+    tools:context=".ui.fragment.AccountFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/dummy_pro_pic"
+                android:src="@drawable/profile_pic"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/roundedCorners" />
@@ -53,7 +53,7 @@
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Rahul Garhwal"
+                    android:text="Welcome"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 

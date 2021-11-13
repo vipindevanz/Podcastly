@@ -92,7 +92,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun featuredShow() {
-
+        featuredShowAdapter = FeaturedShowAdapter(podcastList)
+        featuresRecyclerView.layoutManager=GridLayoutManager(context,3)
+        featuresRecyclerView.adapter=featuredShowAdapter
     }
 
     private fun liveShow() {

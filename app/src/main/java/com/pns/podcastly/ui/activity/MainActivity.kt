@@ -5,8 +5,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.pns.podcastly.R
-import com.pns.podcastly.remote.model.ListenNoteResponseDTO
 import com.pns.podcastly.ui.fragment.HomeFragment
+import com.pns.podcastly.ui.fragment.AccountFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         bottomNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> setCurrentFragment(HomeFragment())
+                R.id.account->setCurrentFragment(AccountFragment())
             }
             true
         }
