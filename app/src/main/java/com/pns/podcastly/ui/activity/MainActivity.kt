@@ -10,7 +10,7 @@ import com.pns.podcastly.ui.fragment.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private val podcastList = mutableListOf<ListenNoteResponseDTO>()
+
     var isOptionVisible = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

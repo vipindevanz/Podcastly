@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class PodcastViewModel() : ViewModel() {
     private val apiRepo = ListenNotesApiRepo()
     private lateinit var data: Podcast
-    fun showData(): Podcast {
+     suspend fun showData(): Podcast {
        return apiRepo.getPodcastsFromServer()
         return data
     }

@@ -9,7 +9,7 @@ class ListenNotesApiRepo {
 
     private val apiService = Network.getRetrofit().create(ListenNotesApiService::class.java)
 
-     fun getPodcastsFromServer(): Podcast {
+     suspend fun getPodcastsFromServer(): Podcast {
         return apiService.getPodcastsFromServer("a3216e1757f842c5b8579878ebb3110d")
     }
 }
