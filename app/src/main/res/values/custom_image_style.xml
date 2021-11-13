@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="roundedCorners">
+        <item name="backgroundColor">@color/white</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="FlipperRoundedCorners">
+        <item name="backgroundColor">@color/white</item>
+        <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="CardRoundedCorners">
+        <item name="backgroundColor">@color/white</item>
+        <item name="cornerSize">5%</item>
+    </style>
+</resources>
