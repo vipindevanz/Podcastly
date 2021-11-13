@@ -8,7 +8,6 @@
     android:theme="@style/Theme.MaterialComponents.Light"
     tools:context=".ui.activity.MainActivity">
 
-
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
