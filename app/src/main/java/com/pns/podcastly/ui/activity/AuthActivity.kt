@@ -12,9 +12,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.database.FirebaseDatabase
 import com.pns.podcastly.R
-import com.pns.podcastly.database.model.User
 import com.pns.podcastly.utils.Constants
 import kotlinx.android.synthetic.main.activity_auth.*
 
@@ -40,7 +38,6 @@ class AuthActivity : AppCompatActivity()  {
             .build()
 
         googleAuth.setOnClickListener {
-            view.visibility = View.VISIBLE
             authProgress.visibility = View.VISIBLE
             googleSignInClient = GoogleSignIn.getClient(this, gso)
             val signInIntent = googleSignInClient.signInIntent
@@ -82,17 +79,14 @@ class AuthActivity : AppCompatActivity()  {
 
             if (it.additionalUserInfo?.isNewUser == true){
 
-                val user = User(uid!!, email!!)
-
-                FirebaseDatabase.getInstance().getReference("users").child(uid).setValue(user)
-
-                launchMainScreen()
+                Log.d(Constants.DEBUG_TAG, "New user")
 
             } else{
 
                 Log.d(Constants.DEBUG_TAG, "Existing user")
-                launchMainScreen()
             }
+
+            launchMainScreen()
 
         } .addOnFailureListener{
 
@@ -100,7 +94,7 @@ class AuthActivity : AppCompatActivity()  {
         }
     }
 
-    private fun launchMainScreen() {
+    private fun launchMainScreen(){
         authProgress.visibility = View.GONE
         startActivity(Intent(this, MainActivity::class.java))
         finish()

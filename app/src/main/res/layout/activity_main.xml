@@ -32,7 +32,6 @@
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNav"
                 android:layout_width="match_parent"
-                app:labelVisibilityMode="labeled"
                 android:layout_height="match_parent"
                 android:background="#FFFFFF"
                 app:itemIconSize="30dp"

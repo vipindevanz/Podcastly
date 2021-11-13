@@ -225,7 +225,6 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
 
         if (requestCode == Constants.MICROPHONE_REQUEST_CODE) {
             permissionGranted = grantResults[0] == PackageManager.PERMISSION_GRANTED
-            startRecording()
         }
     }
 

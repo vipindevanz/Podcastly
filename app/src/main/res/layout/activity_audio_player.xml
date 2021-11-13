@@ -16,6 +16,7 @@
             android:id="@+id/tvFileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
             android:layout_marginEnd="46dp"
             android:gravity="center"
             android:textSize="20sp" />
@@ -23,48 +24,19 @@
     </com.google.android.material.appbar.MaterialToolbar>
 
     <View
-        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/toolBar"
         android:background="@color/gray" />
 
-    <ImageView
-        android:id="@+id/thumbnail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/rl2"
-        android:layout_below="@+id/view"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/podcast" />
-
-    <RelativeLayout
-        android:id="@+id/rl2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_above="@+id/seekBar">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:text="x 1.0"
-            android:textSize="14sp" />
-
-        <ImageButton
-            android:id="@+id/upload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/ic_upload" />
-
-    </RelativeLayout>
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:text="x 1.0"
+        android:textSize="14sp" />
 
     <SeekBar
         android:id="@+id/seekBar"
