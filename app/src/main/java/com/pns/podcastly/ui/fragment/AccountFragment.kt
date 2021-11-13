@@ -1,13 +1,17 @@
 package com.pns.podcastly.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.firebase.auth.FirebaseAuth
 import com.pns.podcastly.R
+import kotlinx.android.synthetic.main.fragment_account.*
 
 class AccountFragment : Fragment(R.layout.fragment_account) {
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,5 +19,10 @@ class AccountFragment : Fragment(R.layout.fragment_account) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        firebaseAuth = FirebaseAuth.getInstance()
+        if (firebaseAuth.currentUser != null) {
+            Glide.with(profilePic).load(firebaseAuth?.currentUser?.photoUrl)
+            userName.text = firebaseAuth?.currentUser?.displayName
+        }
     }
 }
