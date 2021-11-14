@@ -141,10 +141,10 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
     }
 
     private fun getRealPathFromURI(contentUri: Uri): String? {
-        val proj = arrayOf(MediaStore.Images.Media.DATA)
+        val proj = arrayOf(MediaStore.Audio.Media.DATA)
         val loader = CursorLoader(this, contentUri, proj, null, null, null)
         val cursor = loader.loadInBackground()
-        val columnIndex = cursor!!.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+        val columnIndex = cursor!!.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)
         cursor.moveToFirst()
         val result = cursor.getString(columnIndex)
         cursor.close()
