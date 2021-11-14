@@ -3,16 +3,25 @@ package com.pns.podcastly.ui.activity
 import android.annotation.SuppressLint
 import android.media.MediaPlayer
 import android.media.PlaybackParams
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar
+import com.google.firebase.storage.ktx.storage
 import com.pns.podcastly.R
+import com.pns.podcastly.utils.Constants
 import kotlinx.android.synthetic.main.activity_audio_player.*
+import kotlinx.android.synthetic.main.activity_audio_player.tvFileName
+import kotlinx.android.synthetic.main.item_layout.*
 import java.text.DecimalFormat
 import java.text.NumberFormat
 
@@ -33,6 +42,7 @@ class AudioPlayerActivity : AppCompatActivity() {
 
         val filePath = intent.getStringExtra("filePath")
         val fileName = intent.getStringExtra("fileName")
+        val uriString = intent.getStringExtra("uri")
 
         setSupportActionBar(toolBar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -79,6 +89,14 @@ class AudioPlayerActivity : AppCompatActivity() {
             seekBar.progress -= jumpValue
         }
 
+        upload.setOnClickListener {
+            if (uriString != null) {
+                uploadPodcast(uriString)
+            } else {
+                Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
+            }
+        }
+
         chip.setOnClickListener {
             if (playBackSpeed != 2.0f) {
                 playBackSpeed += 0.5f
@@ -101,6 +119,26 @@ class AudioPlayerActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
+    }
+
+    private fun uploadPodcast(uriString: String) {
+
+        val uri = Uri.parse(uriString)
+        val storageRef = uri.lastPathSegment?.let {
+            Firebase.storage.reference.child("Podcasts").child(
+                it
+            )
+        }
+
+        storageRef?.putFile(uri)?.addOnSuccessListener {
+
+            val uriTask = it.storage.downloadUrl
+            while (!uriTask.isComplete){ Log.d(Constants.DEBUG_TAG, "uploading...")}
+            val newUri = uriTask.result
+            val podcastUrl = newUri.toString()
+            tvFileName.text = podcastUrl
+        }
+
     }
 
     private fun playPausePlayer() {
