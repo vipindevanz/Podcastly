@@ -1,5 +1,6 @@
 package com.pns.podcastly.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -41,6 +42,8 @@ class MainActivity : AppCompatActivity() {
                 micOption.setImageResource(R.drawable.mic_icon)
             }
         }
+
+        recordAudio.setOnClickListener { startActivity(Intent(this, RecordAudioActivity::class.java)) }
 
     }
 

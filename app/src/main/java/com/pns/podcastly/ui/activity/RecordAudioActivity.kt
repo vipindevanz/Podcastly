@@ -135,6 +135,7 @@ class RecordAudioActivity : AppCompatActivity(), Timer.OnTimerTickListener {
             val intent = Intent(this@RecordAudioActivity, AudioPlayerActivity::class.java)
             intent.putExtra("filePath", filePath)
             intent.putExtra("fileName", fileName)
+            intent.putExtra("uri", data.data.toString())
             startActivity(intent)
         }
     }
