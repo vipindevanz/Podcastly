@@ -19,8 +19,8 @@ class AccountFragment : Fragment(R.layout.fragment_account) {
         super.onViewCreated(view, savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
         if (firebaseAuth.currentUser != null) {
-            Glide.with(profilePic).load(firebaseAuth?.currentUser?.photoUrl)
-            userName.text = firebaseAuth?.currentUser?.displayName
+            Glide.with(profilePic).load(firebaseAuth?.currentUser?.photoUrl).into(profilePic)
+            userName.text = firebaseAuth.currentUser?.displayName
         }
     }
 }

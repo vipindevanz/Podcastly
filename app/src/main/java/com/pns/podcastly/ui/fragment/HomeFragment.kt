@@ -44,6 +44,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     }
 
+
     private fun buildBannerSliderList() {
         bannerImages.add(BannerModel(R.drawable.banner1))
         bannerImages.add(BannerModel(R.drawable.banner2))
