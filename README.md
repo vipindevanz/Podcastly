@@ -1,4 +1,4 @@
-![GitHub Cards Preview](https://www.clearvoice.com/wp-content/uploads/2020/01/01.25.20_Hero_1360x646.png)
+![GitHub Cards Preview](https://firebasestorage.googleapis.com/v0/b/snapchat-f2264.appspot.com/o/Main_Point%5B1%5D.png?alt=media&token=60a0bff3-82f7-4ec8-8571-ca6a3a297dcb)
 
 ## Tech Stack ✨
 - Firebase 
