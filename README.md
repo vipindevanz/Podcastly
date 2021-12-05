@@ -1,14 +1,9 @@
 ![GitHub Cards Preview](https://firebasestorage.googleapis.com/v0/b/snapchat-f2264.appspot.com/o/Main_Point%5B1%5D.png?alt=media&token=60a0bff3-82f7-4ec8-8571-ca6a3a297dcb)
 
-## Tech Stack ✨
-- Firebase 
-- Kotlin
-- Retrofit
-- Material UI
-- Room Database
-
-## Built With 🚀
-- [Kotlin](https://kotlinlang.org/)
+###  
+App Name                   | Describe                  | Tech Stack             | Google Play 
+:------------------------: | :------------------------ | :------------------------: | :------------------------: 
+Podcastly | Podcastly is an Android app where we can Record and listen podcasts anywhere in the world | Android, Kotlin, Firebase, Retrofit, Material UI, Room Database | [![Get it on Google Play](https://i.imgur.com/T9HnFlW.png)](https://play.google.com/store/apps/details?id=com.pns.podcastly)
 
 # Dependencies 
 
@@ -66,5 +61,5 @@
 
 ## Here are the some screenshots of the application
 
-![GitHub Cards Preview](https://firebasestorage.googleapis.com/v0/b/ajio-f9ef3.appspot.com/o/Untitled%20design%20(2).png?alt=media&token=e044cd67-c90f-4765-9128-158b537daef4)
+![GitHub Cards Preview](https://firebasestorage.googleapis.com/v0/b/snapchat-f2264.appspot.com/o/Untitled%20design%20(13).png?alt=media&token=7d66dc41-e015-47c9-9cb1-b77908b8590f)
 
